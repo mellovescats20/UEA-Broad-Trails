@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UEA Broad Trails</title>
+
+  <!-- 🟢 LINK TO YOUR CSS (styling) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- 🟢 LINK TO LEAFLET CSS (this makes the map actually show) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <!-- 🟣 HEADER -->
+  <header>
+    <h1>UEA Broad Trails</h1>
+  </header>
+
+  <!-- 🟩 MAP AND INFO SECTION -->
+  <main>
+  <!-- Sidebar with toggle button -->
+  <!-- Sidebar with toggle button -->
+<div id="sidebar">
+  <button id="toggle-about">About the Trails</button>
+  <button class="trail-tab" data-tab="pink">Pink Trail</button>
+  <button class="trail-tab" data-tab="purple">Purple Trail</button>
+  <button class="trail-tab" data-tab="gray">Gray Trail</button>
+  <button class="trail-tab" data-tab="blue">Blue Trail</button>
+<button class="trail-tab" data-tab="green">Green Trail</button>
+<button class="trail-tab" data-tab="orange">Orange Trail</button>
+<button class="trail-tab" data-tab="fairweather">Fair Weather Route</button>
+
+</div>
+
+
+  <!-- Map and Info Panel -->
+  <!-- Map and Info Panel -->
+<div id="content">
+   <p id="gps-warning" class="hidden">
+        You need to be closer to UEA Broad to unlock the trails 🌿
+    </p>
+  <div id="map"></div>
+  
+  <!-- Removed: <aside id="trail-info">...</aside> -->
+
+</div>
+    <section id="about-tab" style="display: none;">
+      <h2>About the Trails</h2>
+      <img src="images/About-image.jpg" alt="About the Trails" class="trail-img">
+      <p>There are 6 main trails around the UEA campus, ranging from 1.5–2.5 km each:</p>
+      <ul>
+        <li><strong>Pink Trail:</strong> 2.3 km</li>
+        <li><strong>Gray Trail:</strong> 2.5 km</li>
+        <li><strong>Blue Trail:</strong> 2 km <em>(also includes the Fair Weather Route: 1.8 km)</em></li>
+        <li><strong>Orange Trail:</strong> 1.5 km</li>
+        <li><strong>Purple Trail:</strong> 2.3 km</li>
+        <li><strong>Green Trail:</strong> 1.7 km</li>
+      </ul>
+      <p>
+        These trails run through different habitats around the River Yare and the campus grounds, providing a mix of woodland, lakeside, and riverside scenery. Their purpose is to help students and the community explore campus, stay active, and enjoy local wildlife — all while keeping the campus green, accessible, and flourishing.
+      </p>
+      <p>
+        The maintenance of the trails is managed by <strong>UEA Estates</strong> and the <strong>UEA Conservation & Wildlife Society</strong>. They were originally supported by lottery-funded community wildlife projects, and refreshed in 2020 with help from <strong>UEA+Sport</strong>.
+      </p>
+      <h3>UEA Moves</h3>
+      <p>
+        These trails sync with the <strong>UEA Moves</strong> activity-tracking app. You earn points for walking or running the routes, which can be exchanged for rewards on campus 🎁
+      </p>
+    </section>
+    <section id="pink" class="trail-tab-content" style="display: none;">
+  <h2>Pink Trail</h2>
+  <img src="images/Pink-Trail.jpg" alt="Pink Trail" class="trail-img">
+  <p><em>Short route past UEA’s sports pitches, with live match vibes and easy links to West Campus and Colney Lane parkrun.</em></p>
+
+  <ul>
+    <li>Walk beside multiple UEA sports pitches (rugby, football, lacrosse, baseball)</li>
+    <li>Good chance to see matches/training, especially on Wednesdays</li>
+    <li>Connects towards West Campus, hospital, and research park</li>
+    <li>Overlaps with the busy Colney Lane parkrun route on Saturday mornings</li>
+    <li>Easy, short route with open fields and active atmosphere</li>
+  </ul>
+
+  <h4>Quick Stats:</h4>
+  <ul>
+    <li><strong>Distance:</strong> 2.3 km</li>
+    <li><strong>Approx. steps:</strong> 3000</li>
+    <li><strong>Approx. calories:</strong> 120</li>
+  </ul>
+
+
+</section>
+
+  </div>
+  <section id="purple" class="trail-tab-content" style="display: none;">
+  <h2>Purple Trail</h2>
+  <img src="images/Purple-Trail.jpg" alt="Purple Trail" class="trail-img">
+  <p><em>Art-heavy loop around UEA’s sculpture park, a mini outdoor gallery walk.</em></p>
+
+  <ul>
+    <li>15+ sculptures curated by the Sainsbury Centre</li>
+    <li>Pieces by big-name artists (Elisabeth Frink, Antony Gormley, Henry Moore)</li>
+    <li>Iconic campus architecture by Norman Foster + Denys Lasdun</li>
+    <li>Ancient oaks and a chill natural setting</li>
+  </ul>
+
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 2.3 km</li>
+    <li><strong>Approx. steps:</strong> 3000</li>
+    <li><strong>Approx. calories:</strong> 120</li>
+  </ul>
+</section>
+<section id="gray" class="trail-tab-content" style="display: none;">
+  <h2>Gray Trail</h2>
+  <img src="images/Gray-Trail.jpg" alt="Gray Trail" class="trail-img">
+  <p><em>Campus-core loop with fun pop-culture stops and a bit of UEA history.</em></p>
+
+  <ul>
+    <li>Fully wheelchair-accessible route</li>
+    <li>Takes you straight through central campus</li>
+    <li>“Avengers HQ”</li>
+    <li>The Ziggurats also featured on an album cover by The Streets</li>
+    <li>Drama Studio where Matt Smith trained</li>
+    <li>Mix of iconic architecture and classic UEA student landmarks</li>
+  </ul>
+
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 2.5 km</li>
+    <li><strong>Approx. steps:</strong> 3250</li>
+    <li><strong>Approx. calories:</strong> 130</li>
+  </ul>
+</section>
+<section id="blue" class="trail-tab-content" style="display: none;">
+  <h2>Blue Trail</h2>
+  <img src="images/Blue-Trail.jpg" alt="Blue Trail" class="trail-img">
+  <p><em>Historic park energy with big old trees, classic buildings, and chill garden spaces plus an optional riverside add-on.</em></p>
+
+  <ul>
+    <li>Earlham Park’s heritage landscape</li>
+    <li>600-year-old trees and an old rockery</li>
+    <li>Earlham Hall (16th-century building)</li>
+    <li>History tied to the Gurney family, early Barclays connections, and Elizabeth Fry</li>
+    <li>Former rose garden and Dutch Garden (Norfolk’s first Silent Space)</li>
+    <li><strong>Optional add-on:</strong> connects into the Fair Weather</li>
+  </ul>
+
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 2 km</li>
+    <li><strong>Approx. steps:</strong> 2750</li>
+    <li><strong>Approx. calories:</strong> 110</li>
+  </ul>
+</section>
+<section id="green" class="trail-tab-content" style="display: none;">
+  <h2>Green Trail</h2>
+  <img src="images/Green-Trail.jpg" alt="Green Trail" class="trail-img">
+  <p><em>Calm waterside walk with big sky views, loads of wildlife, and iconic UEA scenery.</em></p>
+  <ul>
+    <li>Sweeping views of the UEA Broad from multiple angles</li>
+    <li>Reflections of Norwich’s big skies + the Ziggurats in the backdrop</li>
+    <li>Tons of fish species in the Broad</li>
+    <li>Frequent bird activity (herons, gulls, ducks, cormorants, etc.)</li>
+  </ul>
+<h3>Biodiversity</h3>
+  <h3>Spring & Summer wildlife:</h3>
+  <ul>
+    <li>Spring Snowflake: rare woodland flower</li>
+    <li>Bee Orchid: found in grassland around June–July</li>
+    <li>Sedge & Reed Warblers: small summer-visiting birds that hang out in reeds</li>
+    <li>Cuckoo: distinct call + known for laying eggs in other birds’ nests</li>
+    <li>Grass Snake: swims the Broad from April–September (harmless + super chill)</li>
+  </ul>
+  <h3>Autumn & Winter wildlife:</h3>
+  <ul>
+    <li>Water Rail: shy wetland bird you might hear squealing in the reeds</li>
+    <li>Kingfisher: bright blue/orange flash by the water, hunts small fish</li>
+  </ul>
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 1.7 km</li>
+    <li><strong>Approx. steps:</strong> 2500</li>
+    <li><strong>Approx. calories:</strong> 100</li>
+  </ul>
+</section>
+<section id="orange" class="trail-tab-content" style="display: none;">
+  <h2>Orange Trail</h2>
+  <img src="images/Orange-Trail.jpg" alt="Orange Trail" class="trail-img">
+  <p><em>Chill woodland walk with strong seasonal color changes, quiet wildlife moments, and a riverside stretch with grazing cattle.</em></p>
+  <ul>
+    <li>Bluebells in spring + orange/red woodland tones in autumn</li>
+    <li>Wooded paths just minutes from the main campus</li>
+    <li>Plenty of small woodland animals (especially grey squirrels)</li>
+    <li>A tree-lined section following the River Yare</li>
+    <li>Rare-breed cattle grazing the marshland (around since 2012)</li>
+  </ul>
+<h3>Biodiversity</h3>
+  <h3>Spring & Summer wildlife</h3>
+  <ul>
+    <li>Wasp Spider: big yellow–black striped web-builder found in grasslands</li>
+    <li>Common Whitethroat: scratchy songbird seen April–September</li>
+    <li>Ruby-Tailed Wasp: tiny metallic blue/pink parasitic wasp</li>
+    <li>Red Admiral: classic black/red/white butterfly</li>
+    <li>Daubenton’s Bat: hunts low over the water around dusk</li>
+    <li>Banded Demoiselle: shiny blue/green damselfly near slow-flowing water</li>
+    <li>Norfolk Hawker: bright green-eyed dragonfly, uncommon elsewhere but thrives in Norfolk</li>
+  </ul>
+
+  <h3>Year-round / habitat wildlife</h3>
+  <ul>
+    <li>Wet woodland supports willow + alder</li>
+    <li>Fen areas host spiders, small mammals, and reed-dwelling species</li>
+    <li>Meadows encourage beetles, bees, and pollinators</li>
+  </ul>
+
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 1.5 km</li>
+    <li><strong>Approx. steps:</strong> 2250</li>
+    <li><strong>Approx. calories:</strong> 90</li>
+  </ul>
+</section>
+<section id="fairweather" class="trail-tab-content" style="display: none;">
+  <h2>Fair Weather Route</h2>
+  <img src="images/FWR.jpg" alt="Fair Weather Route" class="trail-img">
+  <p><em>Chill riverside detour with peaceful vibes, open views, and a good chance to spot grazing cows in warmer months.</em></p>
+
+  <ul>
+    <li>Walks right alongside the River Yare</li>
+    <li>Soft, open scenery perfect for warm-weather days</li>
+    <li>An enclosed grazing area where cows hang out during spring–summer</li>
+    <li>Calm waterside atmosphere with wildlife around the banks</li>
+    <li>Connects smoothly from the Blue Trail as an optional add-on</li>
+  </ul>
+
+  <h3>Quick Stats</h3>
+  <ul>
+    <li><strong>Distance:</strong> 1.8 km</li>
+    <li><strong>Approx. steps:</strong> ~2400</li>
+    <li><strong>Approx. calories:</strong> ~105</li>
+  </ul>
+</section>
+
+  </main>
+
+  <!-- 🟠 LEAFLET JS (map brain) -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- 🟣 YOUR CUSTOM JAVASCRIPT FILE -->
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #295242;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+#map {
+  flex: 2;
+  height: 100%;
+}
+
+#trail-info {
+  flex: 1;
+  padding: 1rem;
+  background: #f0f0f0;
+  overflow-y: auto;
+}
+main {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 140px;
+  background: #2d5b4f;
+  color: white;
+  padding: 1em;
+}
+
+#sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  flex-grow: 1;
+}
+
+#about-tab {
+  background-color: #fff;
+  padding: 1em;
+  overflow-y: auto;
+  max-height: 300px;
+}
+#trail-info:empty {
+  display: none;
+}
+#about-tab {
+  min-height: 100vh; /* full height of screen */
+  padding: 20px;
+}
+.trail-tab {
+  padding: 20px;
+  background-color: #fff;
+  border-top: 2px solid #ccc;
+  margin-top: 10px;
+}
+.trail-tab {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;  /* Reduce padding if it's too big */
+  margin: 5px 0;        /* Controls space between buttons */
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#sidebar {
+  padding: 20px;
+}
+.trail-img {
+  width: 100%;
+  max-width: 700px;
+  max-height: 450px;   /* gently caps it */
+  object-fit: contain; /* fits inside box without cropping */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 20px;
+}
